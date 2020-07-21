@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import Button from 'components/Button'
+import * as Text from 'components/Text'
+import theme from 'layout/theme'
 
 export default function Home() {
   return (
@@ -10,13 +14,17 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Next & Mobx!</a>
         </h1>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
-
+        <Link href='/todos'>
+          <Button>
+            <Text.FontSize32 color={theme.color.PRIMARY} fontWeight={700}>TODO List</Text.FontSize32>
+          </Button>
+        </Link>
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
             <h3>Documentation &rarr;</h3>
@@ -122,6 +130,7 @@ export default function Home() {
         .title,
         .description {
           text-align: center;
+          margin-bottom: 20px;
         }
 
         .description {
