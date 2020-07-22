@@ -1,7 +1,7 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-// import { ServerStyleSheets } from '@material-ui/styles'
+import { ServerStyleSheets } from '@material-ui/styles'
 
 const SITE_NAME = "SITE_NAME";
 const SITE_TITLE = "SITE_TITLE";
@@ -11,20 +11,17 @@ const SITE_IMAGE = "SITE_IMAGE";
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet()
-    // const sheet2 = new ServerStyleSheets()
+    const sheet2 = new ServerStyleSheets()
     const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />),
-      // sheet2.collect(<App {...props} />)
+      sheet.collectStyles(sheet2.collect(<App {...props} />)),
     )
     const styleTags = sheet.getStyleElement()
-    // const styleTags2 = sheet2.getStyleElement()
-    return { ...page, styleTags }
+    const styleTags2 = sheet2.getStyleElement()
+    return { ...page, styleTags, styleTags2 }
   }
   setGoogleTags() {
     return {
-      __html: `
-        Kakao.init('cfb8255258953f98baa084d45d41d03d');
-        
+      __html: `        
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());

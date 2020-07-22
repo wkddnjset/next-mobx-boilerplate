@@ -20,7 +20,7 @@ export default function Home() {
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
-        <Link href='/todos'>
+        <Link as='/todos' href='/todos'>
           <Button>
             <Text.FontSize32 color={theme.color.PRIMARY} fontWeight={700}>TODO List</Text.FontSize32>
           </Button>
