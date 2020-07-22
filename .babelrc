@@ -27,7 +27,8 @@
           "components": "./components",
           "containers": "./containers",
           "layout": "./layout",
-          "stores": "./stores"
+          "stores": "./stores",
+          "renderer": "./renderer"
         }
       }
     ]
