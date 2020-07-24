@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "api": ["./api"],
+            "components": ["./components"],
+            "containers": ["./containers"],
+            "layout": ["./layout"],
+            "stores": ["./stores"]
+        },
+        "experimentalDecorators": true, 
+    }
+  }
+  
