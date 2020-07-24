@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import theme from 'layout/theme'
 
-const ButtonStyle = styled.div`
+const ButtonStyle = styled.button`
   color: ${props => props.color ? props.color : theme.color.PRIMARY};
   border: solid 2px ${props => props.borderColor ? props.borderColor : theme.color.PRIMARY};
   background-color: ${props => props.backgroundColor ? props.backgroundColor : theme.color.WHITE};
@@ -10,6 +10,10 @@ const ButtonStyle = styled.div`
   align-items: center;
   cursor: pointer;
   border-radius: 6px;
+  ${props => props.disabled && css`
+    filter: brightness(0.96);
+    cursor: default;
+  `}
   :hover {
     filter: brightness(0.96);
   }

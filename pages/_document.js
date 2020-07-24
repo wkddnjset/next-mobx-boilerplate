@@ -56,7 +56,7 @@ export default class MyDocument extends Document {
           {/* Google Analytics */}
           <script dangerouslySetInnerHTML={this.setGoogleTags()} />
           {this.props.styleTags}
-          {/* {this.props.styleTags2} */}
+          {this.props.styleTags2}
         </Head>
         <body>
           <Main />
